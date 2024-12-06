@@ -75,8 +75,9 @@ function installTheme(theme: ThemeDefinition) {
 	}
 
 	try {
+		const command = "convert"
 		const themeOut = clean(
-			execSync(`${themeImporterBin} convert "${path}"`).toString(),
+			execSync(`${themeImporterBin} ${command} "${path}"`).toString(),
 		);
 
 		const themeExport = {
